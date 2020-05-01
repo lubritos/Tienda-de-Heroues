@@ -3,6 +3,7 @@ $(document).ready(function(){
     console.log(heroes);
 
     agregarTitulo(heroes['heroes'][0].title);
+    mostrarTarjetas(heroes['heroes'][0].lista);
 
     function agregarTitulo(titulo){
         $('#heroes').append(`
@@ -12,6 +13,14 @@ $(document).ready(function(){
         </div>
         `);
 
+    }
+    function mostrarTarjetas(tarjetas) {
+        if (tarjetas) {
+             $.each(tarjetas, function(position, item) {
+                 console.log(item);
+                 agregarTarjeta( position, item);
+             });
+        }
     }
 
 })
